@@ -30,7 +30,7 @@
 | DELETE        | /api/rooms/:listingid/ | Delete a specific listing                                     |
 
 
-## Bookings
+### Bookings
 | HTTP Method   | Endpoint               | Description                                                      |
 |:--------------|:-----------------------------------|:-----------------------------------------------------------------|
 | GET           | /api/rooms/:listingid/booking/dates| Returns all booked dates for a specific listing                  |
