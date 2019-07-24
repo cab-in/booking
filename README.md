@@ -11,12 +11,57 @@
 ## Table of Contents
 
 1. [Usage](#Usage)
+1. [API](#API)
 1. [Requirements](#requirements)
 1. [Development](#development)
 
 ## Usage
 
 > Some usage instructions
+
+## API
+
+### Listings
+> Create a new listing
+```sh
+POST /api/rooms/
+```
+
+> Return details about a specific listing
+```sh
+GET /api/rooms/:listingid/
+```
+
+> Update details for a specific listing
+```sh
+PUT /api/rooms/:listingid/
+```
+
+> Delete a specific listing
+```sh
+DELETE /api/rooms/:listingid/
+```
+
+## Bookings
+> Add a booked date for a specific listing
+```sh
+POST /api/:listingid/booking
+```
+
+> Returns all booked dates for a specific listing
+```sh
+GET /api/rooms/:listingid/booking/dates
+```
+
+> Update details of a specific booked date for a specific listing
+```sh
+PUT /api/:listingid/:date
+```
+
+> Remove a booked date for a specific listing
+```sh
+DELETE /api/rooms/:listingid/:date
+```
 
 ## Requirements
 
