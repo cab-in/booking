@@ -22,46 +22,22 @@
 ## API
 
 ### Listings
-> Create a new listing
-```sh
-POST /api/rooms/
-```
+| HTTP Method   | Endpoint               | Description                                                   |
+|:--------------|:-----------------------|:--------------------------------------------------------------|
+| GET           | /api/rooms/:listingid/ | Return details about a specific listing                       |
+| POST          | /api/rooms/            | Create a new listing                                          |
+| PUT           | /api/rooms/:listingid/ | Update details for a specific listing                         |
+| DELETE        | /api/rooms/:listingid/ | Delete a specific listing                                     |
 
-> Return details about a specific listing
-```sh
-GET /api/rooms/:listingid/
-```
-
-> Update details for a specific listing
-```sh
-PUT /api/rooms/:listingid/
-```
-
-> Delete a specific listing
-```sh
-DELETE /api/rooms/:listingid/
-```
 
 ## Bookings
-> Add a booked date for a specific listing
-```sh
-POST /api/:listingid/booking
-```
+| HTTP Method   | Endpoint               | Description                                                      |
+|:--------------|:-----------------------------------|:-----------------------------------------------------------------|
+| GET           | /api/rooms/:listingid/booking/dates| Returns all booked dates for a specific listing                  |
+| POST          | /api/:listingid/booking            | Add a booked date for a specific listing                         |
+| PUT           | /api/:listingid/:date              | Update details of a specific booked date for a specific listing  |
+| DELETE        | /api/rooms/:listingid/:date        | Remove a booked date for a specific listing                      |
 
-> Returns all booked dates for a specific listing
-```sh
-GET /api/rooms/:listingid/booking/dates
-```
-
-> Update details of a specific booked date for a specific listing
-```sh
-PUT /api/:listingid/:date
-```
-
-> Remove a booked date for a specific listing
-```sh
-DELETE /api/rooms/:listingid/:date
-```
 
 ## Requirements
 
