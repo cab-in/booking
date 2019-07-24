@@ -24,21 +24,21 @@
 ### Listings
 | HTTP Method   | Endpoint               | Description                                                   |
 |:--------------|:-----------------------|:--------------------------------------------------------------|
-| GET           | /api/rooms/:listingid/ | Return details about a specific listing                       |
+| GET           | /api/:listingid/rooms  | Return details about a specific listing                       |
 | POST          | /api/rooms/            | Create a new listing                                          |
-| PUT           | /api/rooms/:listingid/ | Update and replace details for a specific listing             |
-| PATCH         | /api/rooms/:listingid/ | Update and modify details for a specific listing              |
-| DELETE        | /api/rooms/:listingid/ | Delete a specific listing                                     |
+| PUT           | /api/:listingid/rooms  | Update and replace details for a specific listing             |
+| PATCH         | /api/:listingid/rooms  | Update and modify details for a specific listing              |
+| DELETE        | /api/:listingid/rooms  | Delete a specific listing                                     |
 
 
 ### Bookings
 | HTTP Method     | Endpoint                           | Description                                                    |
 |:----------------|:-----------------------------------|:---------------------------------------------------------------|
-| GET             | /api/rooms/:listingid/booking/dates| Returns all booked dates for a specific listing                |
-| POST            | /api/:listingid/booking            | Add a booked date for a specific listing                       |
-| PUT             | /api/:listingid/:date              | Update and replace details of a specific booked date for a specific listing|
-| PATCH           | /api/:listingid/:date              | Update and modify details of a specific booked date for a specific listing|
-| DELETE          | /api/rooms/:listingid/:date        | Remove a booked date for a specific listing                    |
+| GET             | /api/:listingid/dates              | Returns all booked dates for a specific listing                |
+| POST            | /api/:listingid/dates              | Add a booked date for a specific listing                       |
+| PUT             | /api/:listingid/dates/:date        | Update and replace details of a specific booked date for a specific listing|
+| PATCH           | /api/:listingid/dates/:date        | Update and modify details of a specific booked date for a specific listing|
+| DELETE          | /api/:listingid/dates/:date        | Remove a booked date for a specific listing                    |
 
 
 ## Requirements
