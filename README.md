@@ -37,7 +37,7 @@
 | GET             | /api/rooms/:listingid/booking/dates| Returns all booked dates for a specific listing                |
 | POST            | /api/:listingid/booking            | Add a booked date for a specific listing                       |
 | PUT             | /api/:listingid/:date              | Update details of a specific booked date for a specific listing|
-| PATCH           | /api/rooms/:listingid/             | Update details of a specific booked date for a specific listing|
+| PATCH           | /api/:listingid/:date              | Update details of a specific booked date for a specific listing|
 | DELETE          | /api/rooms/:listingid/:date        | Remove a booked date for a specific listing                    |
 
 
