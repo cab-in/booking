@@ -27,23 +27,13 @@ for (let i = 0; i < 100; i += 1) {
   listings.push(listingInfo);
 
 
-  // for (let j = 0; j < 75; j += 1) {
-  //   const bookingInfo = {
-  //     listingId: i + 1,
-  //     bookedDate: faker.date.between('2019-06-01', listingInfo.lastAvailableDate),
-  //   };
-  //   bookings.push(bookingInfo);
-  // }
-  const dateStorage = new Set();
-  while (dateStorage.size !== 5) {
-    dateStorage.add(faker.date.between('2019-06-01', '2019-06-07'));
-  }
-  dateStorage.forEach((element) => {
-    db.Booking.create({
+  for (let j = 0; j < 75; j += 1) {
+    const bookingInfo = {
       listingId: i + 1,
-      bookedDate: element,
-    });
-  });
+      bookedDate: faker.date.between('2019-06-01', listingInfo.lastAvailableDate),
+    };
+    bookings.push(bookingInfo);
+  }
 }
 
 Promise.all([
