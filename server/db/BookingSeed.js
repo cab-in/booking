@@ -2,11 +2,11 @@ const faker = require('faker');
 const fs = require('fs');
 const path = require('path');
 
-const filename = path.join(__dirname, '../csv/booking.csv');
+const filename = path.join(__dirname, '../csv/dates.csv');
 const myWriteStream = fs.createWriteStream(filename);
 
-const lastAvailableDate = '2020-05-31';
-let i = 10;
+const lastAvailableDate = '2019-09-31';
+let i = 2000001;
 write();
 
 function write() {

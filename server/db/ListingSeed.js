@@ -5,7 +5,7 @@ const path = require('path');
 const filename = path.join(__dirname, '../csv/listing.csv');
 const myWriteStream = fs.createWriteStream(filename);
 
-let i = 10000000;
+let i = 2000001;
 write();
 
 function write() {
