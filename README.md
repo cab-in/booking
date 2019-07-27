@@ -27,7 +27,6 @@
 | GET           | /api/:listingid/rooms  | Return details about a specific listing                       |
 | POST          | /api/rooms/            | Create a new listing                                          |
 | PUT           | /api/:listingid/rooms  | Update and replace details for a specific listing             |
-| PATCH         | /api/:listingid/rooms  | Update and modify details for a specific listing              |
 | DELETE        | /api/:listingid/rooms  | Delete a specific listing                                     |
 
 
@@ -37,7 +36,6 @@
 | GET             | /api/:listingid/dates              | Returns all booked dates for a specific listing                |
 | POST            | /api/:listingid/dates              | Add a booked date for a specific listing                       |
 | PUT             | /api/:listingid/dates/:date        | Update and replace details of a specific booked date for a specific listing|
-| PATCH           | /api/:listingid/dates/:date        | Update and modify details of a specific booked date for a specific listing|
 | DELETE          | /api/:listingid/dates/:date        | Remove a booked date for a specific listing                    |
 
 
