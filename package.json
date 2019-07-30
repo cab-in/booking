@@ -15,6 +15,7 @@
     "seed": "node server/db/seed.js",
     "listing": "node server/db/ListingSeed.js",
     "booking": "node server/db/BookingSeed.js",
+    "user": "node server/db/UserSeed.js",
     "db": "mysql -uroot < ./server/db/schema.sql",
     "docker:start": "npm run seed && npm start",
     "cass": "node server/csv/import.js"

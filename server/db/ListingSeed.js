@@ -1,11 +1,14 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
+/* eslint-disable no-use-before-define */
 const faker = require('faker');
 const fs = require('fs');
 const path = require('path');
 
-const filename = path.join(__dirname, '../csv/listing.csv');
+const filename = path.join(__dirname, '../csv/primary.csv');
 const myWriteStream = fs.createWriteStream(filename);
 
-let i = 2000001;
+let i = 10000001;
 write();
 
 function write() {
