@@ -14,5 +14,5 @@ CREATE TABLE IF NOT EXISTS booking (listing_id text, basePrice smallint, views s
 maxGuests tinyint, lastAvailableDate date);
 
 -- \copy booking FROM PROGRAM 'gzip -dc ./server/csv/users.csv.gz' DELIMITERS ',' CSV;
--- \copy booking FROM 'Users/christopherchan/Desktop/output.csv' DELIMITERS ',' CSV;
--- CREATE INDEX listings_listing_id ON booking(listing_id);
+-- \copy booking FROM './server/csv/BookedDates.csv' DELIMITERS ',' CSV;
+-- CREATE INDEX booking_booking_id ON booking(booking_id, listing_id);
