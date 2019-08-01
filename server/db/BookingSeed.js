@@ -9,6 +9,7 @@ const myWriteStream = fs.createWriteStream(filename);
 
 let i = 2000001;
 let stayLength = 0;
+let count = 0;
 write();
 
 function write() {
@@ -18,28 +19,38 @@ function write() {
     const listing = uuidv4();
     const start = moment('2019-01-01');
     if (i === 1) {
-      for (let j = 0; j < 50; j += 1) {
+      for (let j = 0; j < 50; j += stayLength) {
         stayLength = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-        const uuid = uuidv4();
+        const bookingID = uuidv4();
         const user = uuidv4();
-        const endingDate = start.clone().add(stayLength, 'days').format('YYYY-MM-DD');
-        const startDate = start.format('YYYY-MM-DD');
+        count = 0;
+
+        while (count !== stayLength) {
+          const date = start.format('YYYY-MM-DD');
+          start.add(1, 'days');
+          const data = `${bookingID},${listing},${user},${date}\n`;
+          myWriteStream.write(data, 'utf8');
+          count += 1;
+        }
         const randomBuffer = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
-        start.add(stayLength + randomBuffer, 'days');
-        const data = `${uuid},${listing},${user},${startDate},${endingDate}\n`;
-        myWriteStream.write(data, 'utf8');
+        start.add(randomBuffer, 'days');
       }
     } else {
-      for (let j = 0; j < 50; j += 1) {
+      for (let j = 0; j < 50; j += stayLength) {
         stayLength = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-        const uuid = uuidv4();
+        const bookingID = uuidv4();
         const user = uuidv4();
-        const endingDate = start.clone().add(stayLength, 'days').format('YYYY-MM-DD');
-        const startDate = start.format('YYYY-MM-DD');
+        count = 0;
+
+        while (count !== stayLength) {
+          const date = start.format('YYYY-MM-DD');
+          start.add(1, 'days');
+          const data = `${bookingID},${listing},${user},${date}\n`;
+          ok = myWriteStream.write(data, 'utf8');
+          count += 1;
+        }
         const randomBuffer = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
-        start.add(stayLength + randomBuffer, 'days');
-        const data = `${uuid},${listing},${user},${startDate},${endingDate}\n`;
-        ok = myWriteStream.write(data, 'utf8');
+        start.add(randomBuffer, 'days');
       }
     }
   } while (i > 0 && ok);
