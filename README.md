@@ -33,10 +33,10 @@
 ### Bookings
 | HTTP Method     | Endpoint                           | Description                                                    |
 |:----------------|:-----------------------------------|:---------------------------------------------------------------|
-| GET             | /api/bookings/:listingid           | Returns all booked dates for a specific listing                |
-| POST            | /api/bookings/:listingid           | Add a booked date for a specific listing                       |
-| PUT             | /api/bookings/:bookingid           | Update and replace details of a specific booked date for a specific listing|
-| DELETE          | /api/bookings/:bookingid           | Remove a booked date for a specific listing                    |
+| GET             | /api/bookings/                     | Returns all booked dates for a specific listing                |
+| POST            | /api/bookings/                     | Add a booked date for a specific listing                       |
+| PUT             | /api/bookings/?id                  | Update and replace details of a specific booked date for a specific listing|
+| DELETE          | /api/bookings/?id                  | Remove a booked date for a specific listing                    |
 
 
 ## Requirements

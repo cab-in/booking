@@ -101,7 +101,6 @@ app.delete('/api/bookings/', (req, res) => {
     .catch(e => console.error(e.stack));
 });
 
-
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
