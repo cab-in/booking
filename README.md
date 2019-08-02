@@ -24,10 +24,10 @@
 ### Listings
 | HTTP Method   | Endpoint               | Description                                                   |
 |:--------------|:-----------------------|:--------------------------------------------------------------|
-| GET           | /api/:listingid/rooms  | Return details about a specific listing                       |
+| GET           | /api/rooms/:listingid  | Return details about a specific listing                       |
 | POST          | /api/rooms/            | Create a new listing                                          |
-| PUT           | /api/:listingid/rooms  | Update and replace details for a specific listing             |
-| DELETE        | /api/:listingid/rooms  | Delete a specific listing                                     |
+| PUT           | /api/rooms/:listingid  | Update and replace details for a specific listing             |
+| DELETE        | /api/rooms/:listingid  | Delete a specific listing                                     |
 
 
 ### Bookings

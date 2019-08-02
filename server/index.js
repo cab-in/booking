@@ -39,7 +39,7 @@ app.get('/api/:listingid/booking', async (req, res) => {
 
 // CRUD API LISTINGS -------------------------------------------------------------------------------
 
-app.get('/api/:listingid/rooms', (req, res) => {
+app.get('/api/rooms/:listingid', (req, res) => {
   const { listingid } = req.params;
   const query = `SELECT * FROM booking WHERE listing_id = '${listingid}'`;
   client.get(query, (error, result) => {
@@ -68,7 +68,7 @@ app.post('/api/rooms', (req, res) => {
     .catch(e => console.error(e.stack));
 });
 
-app.put('/api/:listingid/rooms', (req, res) => {
+app.put('/api/rooms/:listingid', (req, res) => {
   const {
     listing_id, baseprice, views, cleaningfee, servicefee, taxes, maxguests, lastavailabledate,
   } = req.body;
@@ -82,7 +82,7 @@ app.put('/api/:listingid/rooms', (req, res) => {
     .catch(e => console.error(e.stack));
 });
 
-app.delete('/api/:listingid/rooms', (req, res) => {
+app.delete('/api/rooms/:listingid', (req, res) => {
   const { listingid } = req.params;
   listing.pool.query(`DELETE FROM booking WHERE listing_id = '${listingid}'`)
     .then(data => res.send(`Listing ${listingid} has been deleted!`))
