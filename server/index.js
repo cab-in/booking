@@ -3,12 +3,11 @@
 /* eslint-disable camelcase */
 const newrelic = require('newrelic');
 const redis = require('redis');
-const spdy = require('spdy');
-const http2 = require('http2');
 const fs = require('fs');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+const bodyParser = require('body-parser');
 const db = require('./db');
 const listing = require('./postgres/listingIndex.js');
 const booking = require('./postgres/bookingIndex.js');
@@ -18,14 +17,9 @@ const client = redis.createClient();
 const app = express();
 const port = 3001;
 
-// const options = {
-//   key: fs.readFileSync(path.resolve(__dirname, './keys/server.key')),
-//   cert: fs.readFileSync(path.resolve(__dirname, './keys/server.crt')),
-// };
-
 app.use(morgan('dev'));
 app.use('/rooms/:listingid', express.static(path.resolve('client')));
-app.use(express.json());
+app.use(bodyParser());
 
 client.on('error', (err) => {
   console.log('Something went wrong ', err);
@@ -70,12 +64,12 @@ app.post('/api/rooms', (req, res) => {
 
 app.put('/api/rooms/:listingid', (req, res) => {
   const {
-    listing_id, baseprice, views, cleaningfee, servicefee, taxes, maxguests, lastavailabledate,
+    baseprice, views, cleaningfee, servicefee, taxes, maxguests, lastavailabledate,
   } = req.body;
   const { listingid } = req.params;
 
   listing.pool.query(`UPDATE booking 
-  SET listing_id = ${listing_id}, baseprice = ${baseprice}, views = ${views}, cleaningfee = ${cleaningfee}, 
+  SET baseprice = ${baseprice}, views = ${views}, cleaningfee = ${cleaningfee}, 
   servicefee = ${servicefee}, taxes = ${taxes}, maxguests = ${maxguests}, lastavailabledate = '${lastavailabledate}' 
   WHERE listing_id = '${listingid}'`)
     .then(data => res.send(`Listing ${listingid} updated!`))
@@ -128,7 +122,7 @@ app.put('/api/bookings/', (req, res) => {
   const { id } = req.query;
 
   booking.pool.query(`UPDATE booking 
-  SET listing_id = '${listing_id}', user_id = '${user_id}', day = '${day}'
+  SET listing_id = '${id}', user_id = '${user_id}', day = '${day}'
   WHERE booking_id = '${id}'`)
     .then(data => res.send(`Booking ${id} updated!`))
     .catch(e => console.error(e.stack));

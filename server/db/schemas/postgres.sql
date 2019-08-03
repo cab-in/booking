@@ -17,3 +17,6 @@ maxGuests tinyint, lastAvailableDate text);
 -- \copy booking FROM './server/csv/BookedDatesTest.csv' DELIMITERS ',' CSV;
 -- CREATE INDEX booking_booking_id ON booking(listing_id)
 -- SELECT * FROM pg_indexes WHERE tablename = 'booking';
+-- \copy (SELECT listing_id FROM booking LIMIT 100000) TO '/server/csv/listings.csv' (format CSV);
+-- \copy (SELECT ARRAY[DISTINCT listing_id] FROM booking LIMIT 10) TO '/server/csv/test.csv' (format CSV);
+-- SELECT ARRAY[DISTINCT listing_id] FROM booking LIMIT 10
