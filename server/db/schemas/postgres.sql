@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS booking (listing_id uuid DEFAULT uuid_generate_v4 (),
 maxGuests tinyint, lastAvailableDate text);
 
 -- \copy booking FROM PROGRAM 'gzip -dc ./server/csv/BookedDates.csv.gz' DELIMITERS ',' CSV;
+-- \copy booking FROM PROGRAM 'gzip -dc ./BookedDates.csv.gz' DELIMITERS ',' CSV;
 -- \copy booking FROM './server/csv/BookedDatesTest.csv' DELIMITERS ',' CSV;
 -- CREATE INDEX booking_booking_id ON booking(listing_id)
 -- SELECT * FROM pg_indexes WHERE tablename = 'booking';
