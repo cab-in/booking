@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 /* eslint-disable no-use-before-define */
+const uuidv4 = require('uuid/v4');
 const faker = require('faker');
 const fs = require('fs');
 const path = require('path');
@@ -32,10 +33,10 @@ function write() {
 
     i -= 1;
     if (i === 0) {
-      const data = `${i},${basePrice},${views},${cleaningFee},${serviceFee},${taxes},${maxGuests},${lastAvailableDate}\n`;
+      const data = `${uuidv4()},${basePrice},${views},${cleaningFee},${serviceFee},${taxes},${maxGuests},${lastAvailableDate}\n`;
       myWriteStream.write(data, 'utf8');
     } else {
-      const data = `${i},${basePrice},${views},${cleaningFee},${serviceFee},${taxes},${maxGuests},${lastAvailableDate}\n`;
+      const data = `${uuidv4()},${basePrice},${views},${cleaningFee},${serviceFee},${taxes},${maxGuests},${lastAvailableDate}\n`;
       ok = myWriteStream.write(data, 'utf8');
     }
   } while (i > 0 && ok);

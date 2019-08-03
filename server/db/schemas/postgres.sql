@@ -11,10 +11,10 @@ CREATE DATABASE IF NOT EXISTS listing;
 \c listing;
 
 CREATE TABLE IF NOT EXISTS booking (listing_id uuid DEFAULT uuid_generate_v4 (), basePrice smallint, views smallint, cleaningFee smallint, serviceFee smallint, taxes smallint,
-maxGuests tinyint, lastAvailableDate text);
+maxGuests smallint, lastAvailableDate text);
 
 -- \copy booking FROM PROGRAM 'gzip -dc ./server/csv/BookedDates.csv.gz' DELIMITERS ',' CSV;
--- \copy booking FROM PROGRAM 'gzip -dc ./BookedDates.csv.gz' DELIMITERS ',' CSV;
+-- \copy booking FROM PROGRAM 'gzip -dc ./primary.csv.gz' DELIMITERS ',' CSV;
 -- \copy booking FROM './server/csv/BookedDatesTest.csv' DELIMITERS ',' CSV;
 -- CREATE INDEX booking_booking_id ON booking(listing_id)
 -- SELECT * FROM pg_indexes WHERE tablename = 'booking';
